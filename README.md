@@ -12,6 +12,14 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libenet.so.7 /usr/lib/aarch64-linux-gnu/li
 sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.12 /usr/lib/aarch64-linux-gnu/libFLAC.so.8
 ```
 
+## Fix de Video (OpenGL)
+
+Este repositorio ya incluye el archivo `profiles/rvgl.ini` pre-configurado para evitar el error "Failed to load OpenGL functions". Los ajustes clave aplicados son:
+- `VideoBackend = "GL"`
+- `Shaders = 1`
+
+Esto asegura que el juego utilice el driver correcto para dArkOSRE.
+
 ## Permisos
 
 Asegúrate de que los archivos ejecutables tengan los permisos correctos antes de intentar lanzar el juego desde PortMaster. Ejecuta los siguientes comandos vía SSH o en la terminal, dentro de la carpeta donde ubicaste el juego:
@@ -20,14 +28,6 @@ Asegúrate de que los archivos ejecutables tengan los permisos correctos antes d
 chmod +x RVGL.sh
 chmod +x rvgl.arm64
 ```
-
-## Fix de Video (OpenGL)
-
-Este repositorio ya incluye el archivo `profiles/rvgl.ini` pre-configurado para evitar el error "Failed to load OpenGL functions". Los ajustes clave aplicados son:
-- `VideoBackend = "GL"`
-- `Shaders = 1`
-
-Esto asegura que el juego utilice el driver correcto para dArkOSRE.
 
 ## Créditos
 
