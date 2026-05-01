@@ -16,6 +16,11 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libenet.so.7 /usr/lib/aarch64-linux-gnu/li
 sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.12 /usr/lib/aarch64-linux-gnu/libFLAC.so.8
 ```
 
+> [!TIP]
+> **Verificación:** Puedes confirmar que los enlaces se crearon correctamente con el comando:
+> `ls -l /usr/lib/aarch64-linux-gnu/libFLAC.so.8`
+> Si el comando falla o el número de versión ha cambiado (ej. de .12 a .13), busca tu versión actual con `ls /usr/lib/aarch64-linux-gnu/libFLAC.so*` y ajusta los números en los comandos `ln -s`.
+
 ## Fix de Video (OpenGL)
 
 Este repositorio ya incluye el archivo `profiles/rvgl.ini` pre-configurado para evitar el error "Failed to load OpenGL functions". Los ajustes clave aplicados son:
@@ -32,6 +37,9 @@ Asegúrate de que los archivos ejecutables tengan los permisos correctos antes d
 chmod +x RVGL.sh
 chmod +x rvgl.arm64
 ```
+
+> [!IMPORTANT]
+> **Advertencia de Formato:** Si descargas o editas los archivos desde Windows, asegúrate de que tu editor (como Notepad++ o VS Code) guarde el archivo con finales de línea **Unix (LF)**. Si el archivo se guarda con formato Windows (CRLF), el script no arrancará en la consola.
 
 ## Créditos
 
@@ -55,6 +63,11 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libenet.so.7 /usr/lib/aarch64-linux-gnu/li
 sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.12 /usr/lib/aarch64-linux-gnu/libFLAC.so.8
 ```
 
+> [!TIP]
+> **Verification:** You can confirm the links were created correctly with the command:
+> `ls -l /usr/lib/aarch64-linux-gnu/libFLAC.so.8`
+> If the command fails or the version number has changed (e.g., from .12 to .13), check your current version with `ls /usr/lib/aarch64-linux-gnu/libFLAC.so*` and adjust the numbers in the `ln -s` commands accordingly.
+
 ## Video Fix (OpenGL)
 
 This repository already includes the pre-configured `profiles/rvgl.ini` file to prevent the "Failed to load OpenGL functions" error. The key settings applied are:
@@ -71,6 +84,9 @@ Make sure the executable files have the correct permissions before attempting to
 chmod +x RVGL.sh
 chmod +x rvgl.arm64
 ```
+
+> [!IMPORTANT]
+> **Format Warning:** If you download or edit the files from Windows, make sure your editor (like Notepad++ or VS Code) saves the file with **Unix (LF)** line endings. If the file is saved in Windows (CRLF) format, the script will not start on the console.
 
 ## Credits
 
