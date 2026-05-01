@@ -21,6 +21,14 @@ chmod +x RVGL.sh
 chmod +x rvgl.arm64
 ```
 
+## Fix de Video (OpenGL)
+
+Este repositorio ya incluye el archivo `profiles/rvgl.ini` pre-configurado para evitar el error "Failed to load OpenGL functions". Los ajustes clave aplicados son:
+- `VideoBackend = "GL"`
+- `Shaders = 1`
+
+Esto asegura que el juego utilice el driver correcto para dArkOSRE.
+
 ## Créditos
 
 Solución técnica desarrollada por Leandro Lizano (comunidad R36S).
