@@ -19,7 +19,6 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.12 /usr/lib/aarch64-linux-gnu/l
 > [!TIP]
 > **Verificación:** Puedes confirmar que los enlaces se crearon correctamente con el comando:
 > `ls -l /usr/lib/aarch64-linux-gnu/libFLAC.so.8`
-> Si el comando falla o el número de versión ha cambiado (ej. de .12 a .13), busca tu versión actual con `ls /usr/lib/aarch64-linux-gnu/libFLAC.so*` y ajusta los números en los comandos `ln -s`.
 
 ## Fix de Video (OpenGL)
 
@@ -40,6 +39,20 @@ chmod +x rvgl.arm64
 
 > [!IMPORTANT]
 > **Advertencia de Formato:** Si descargas o editas los archivos desde Windows, asegúrate de que tu editor (como Notepad++ o VS Code) guarde el archivo con finales de línea **Unix (LF)**. Si el archivo se guarda con formato Windows (CRLF), el script no arrancará en la consola.
+
+## 🛠️ Troubleshooting (Si los comandos fallan)
+
+Las versiones de las librerías pueden cambiar con las actualizaciones de dArkOSRE. Si al ejecutar los comandos `ln -s` recibes un error de "archivo no encontrado", verifica tus versiones actuales con:
+
+```bash
+ls /usr/lib/aarch64-linux-gnu/libFLAC.so*
+ls /usr/lib/aarch64-linux-gnu/libenet.so*
+ls /usr/lib/aarch64-linux-gnu/libunistring.so*
+```
+
+Si el número final es diferente (por ejemplo, `libFLAC.so.13` en lugar de `.12`), simplemente ajusta el comando de la siguiente manera:
+`sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.XX /usr/lib/aarch64-linux-gnu/libFLAC.so.8` 
+*(reemplazando XX por tu versión actual).*
 
 ## Créditos
 
@@ -66,7 +79,6 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.12 /usr/lib/aarch64-linux-gnu/l
 > [!TIP]
 > **Verification:** You can confirm the links were created correctly with the command:
 > `ls -l /usr/lib/aarch64-linux-gnu/libFLAC.so.8`
-> If the command fails or the version number has changed (e.g., from .12 to .13), check your current version with `ls /usr/lib/aarch64-linux-gnu/libFLAC.so*` and adjust the numbers in the `ln -s` commands accordingly.
 
 ## Video Fix (OpenGL)
 
@@ -87,6 +99,20 @@ chmod +x rvgl.arm64
 
 > [!IMPORTANT]
 > **Format Warning:** If you download or edit the files from Windows, make sure your editor (like Notepad++ or VS Code) saves the file with **Unix (LF)** line endings. If the file is saved in Windows (CRLF) format, the script will not start on the console.
+
+## 🛠️ Troubleshooting (If commands fail)
+
+Library versions may change with dArkOSRE updates. If you receive a "file not found" error when running the `ln -s` commands, verify your current versions with:
+
+```bash
+ls /usr/lib/aarch64-linux-gnu/libFLAC.so*
+ls /usr/lib/aarch64-linux-gnu/libenet.so*
+ls /usr/lib/aarch64-linux-gnu/libunistring.so*
+```
+
+If the final number is different (e.g., `libFLAC.so.13` instead of `.12`), simply adjust the command as follows:
+`sudo ln -s /usr/lib/aarch64-linux-gnu/libFLAC.so.XX /usr/lib/aarch64-linux-gnu/libFLAC.so.8`
+*(replacing XX with your current version).*
 
 ## Credits
 
